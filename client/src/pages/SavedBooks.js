@@ -10,7 +10,7 @@ import { QUERY_ME } from '../utils/queries';
 import { DELETE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
-  const [deleteBook] = useMutation(DELETE_BOOK);
+  const [deleteBook, { error }] = useMutation(DELETE_BOOK);
   const { loading, data } = useQuery(QUERY_ME);
 
   const userData = data?.user || {};
